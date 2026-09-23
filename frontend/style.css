@@ -1,0 +1,141 @@
+/* COLOR SYSTEM */
+:root{
+    --color-primary: #7b4b3a;
+    --color-secondary: #d98f9b;
+    --color-background: #fdf5ee;
+    --color-soft-pink: #fbe2e2;
+    --color-text: #4f4039;
+    --color-white: #ffffff;
+}
+
+/* GLOBAL */
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color:var(--color-text);
+}
+
+/* OPENING */
+.opening{
+    background-color: #fdf5ee;
+    text-align: center;
+    padding: 80px 20px;
+}
+.opening h1{
+    color:var(--color-primary);
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+}
+.opening p{
+    color:var(--color-text);
+    font-size:20px;
+    line-height: 1.6;
+}
+.opening button{
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border:2px dashed var(--color-soft-pink);
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+/* Hero */
+.hero{
+    background-color: var(--color-soft-pink);
+    text-align: center;
+    padding: 80px 20px;
+    margin: 10px;
+    border-radius: 30px;
+}
+.hero h2{
+    font-size: 35px;
+    color: var(--color-primary);
+}
+.hero p{
+    font-size: 20px;
+    color: var(--color-text);
+}
+
+/* bride */
+.bride{
+    background-color: var(--color-background);
+    text-align: center;
+    padding: 30px 10px;
+    margin: 10px;
+    border: 2px solid #e8d5c8;
+    border-radius:20px ;
+}
+.bride h3{
+    color: var(--color-secondary);
+    font-size:40px;
+}
+
+/* groom */
+.groom{
+    background-color:var(--color-background);
+    text-align: center;
+    padding: 30px 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 2px solid #FFF3ee;
+}
+.groom h3{
+    color: var(--color-primary);
+    font-size:40px;
+    padding-bottom: 0px;
+}
+
+/* EVENT */
+.event{
+    background-color: var(--color-background);
+    text-align: center;
+    padding: 20px 10px;
+    margin-top:10px ;
+    border: 2px solid var(--color-primary);
+    border-radius: 30px;
+    color:#43342f;
+}
+.event h2{
+    font-size: 36px;
+    padding-bottom: 20px;
+    color: var(--color-primary);
+    
+}
+.event h3{
+    padding-top: 0;
+    font-size: 25px;
+    color: var(--color-text);
+}
+.event p{
+    color: var(--color-secondary);
+}
+
+/* Lpve Story */
+.love-story{
+    background-color: var(--color-background);
+    text-align: center;
+    padding: 20px 10px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 15px;
+}
+.love-story p{
+    line-height: 40px;
+    font-size: 20px;
+    color: var(--color-text);
+}
+.love-story h2{
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--color-primary);
+}
+.love-story h3{
+    font-size: 25px;
+    color: var(--color-secondary);
+}
