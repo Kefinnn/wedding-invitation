@@ -1,208 +1,295 @@
-/* COLOR SYSTEM */
-:root{
-    --color-primary: #7b4b3a;
-    --color-secondary: #d98f9b;
-    --color-background: #fdf5ee;
-    --color-soft-pink: #fbe2e2;
-    --color-text: #4f4039;
-    --color-white: #ffffff;
-}
-/* Color system baru */
+/* ==================================================
+   1. DESIGN TOKENS
+================================================== */
 :root {
-    /* Background */
+    /* Colors */
     --color-bg: #FFF8F2;
     --color-surface: #F2E4D8;
-
-    /* Brand */
     --color-primary: #C98286;
     --color-accent: #E8A6A6;
-
-    /* Typography */
     --color-heading: #715047;
     --color-text: #3F3431;
-
-    /* Utility */
     --color-white: #FFFFFF;
+
+    /* Spacing */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 40px;
+    --space-xl: 64px;
+    --space-xxl: 96px;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-pill: 999px;
 }
 
-/* GLOBAL */
-*{
+
+/* ==================================================
+   2. GLOBAL / RESET
+================================================== */
+* {
     box-sizing: border-box;
 }
-body{
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color:var(--color-text);
-}
-
-/* OPENING */
-.opening{
-    background-color: #fdf5ee;
-    text-align: center;
-    padding: 80px 20px;
-}
-.opening h1{
-    color:var(--color-primary);
-    font-size: 56px;
-    font-weight: 700;
-    letter-spacing: 1px;
-
-}
-.opening p{
-    color:var(--color-text);
-    font-size:20px;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-size: 16px;
     line-height: 1.6;
 }
-.opening button{
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    border:2px dashed var(--color-soft-pink);
-    padding: 14px 28px;
-    border-radius: 30px;
+
+
+/* ==================================================
+   3. TYPOGRAPHY
+================================================== */
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-heading);
+}
+
+p{
+    color: var(--color-text);
+}
+
+
+/* ==================================================
+   4. LAYOUT
+================================================== */
+.container {
+    width: min(calc(100% - 32px), 1100px);
+    margin-inline: auto;
+}
+
+
+/* ==================================================
+   5. BUTTON COMPONENT
+================================================== */
+.btn {
+    border: none;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-pill);
+    cursor: pointer;
     font-size: 16px;
+    font-family: inherit;
 }
 
-/* Hero */
-.hero{
-    background-color: var(--color-soft-pink);
-    text-align: center;
-    padding: 80px 20px;
-    margin: 10px;
-    border-radius: 30px;
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
-.hero h2{
-    font-size: 35px;
-    color: var(--color-primary);
-}
-.hero p{
-    font-size: 20px;
-    color: var(--color-text);
-}
-/* couple */
-.couple{
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 40px;
-
-}
-.bride,.groom{
-    width: 40%;
-    text-align: center;
-    padding: 50px 20px;
-    border-radius: 20px;
-    flex-wrap: wrap;
-}
-.bride{
-    background-color: var(--color-background);
-}
-.groom{
-    background-color: var(--color-surface);
-}
-/* untuk mobile */
-@media(max-width: 768px){
-    .couple{
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .bride,.groom{
-        width: 90%;
-    }
+.btn-primary:hover{
+    opacity: 0.9;
 }
 
-/* EVENT */
-.event{
-    background-color: var(--color-background);
-    text-align: center;
-    padding: 20px 10px;
-    margin-top:10px ;
-    border:none ;
-    border-radius: 30px;
-    color:#43342f;
-}
-.event h2{
-    font-size: 36px;
-    padding-bottom: 20px;
-    color: var(--color-primary);
-    
-}
-.event h3{
-    padding-top: 0;
-    font-size: 25px;
-    color: var(--color-text);
-}
-.event p{
-    color: var(--color-secondary);
-    flex-direction: column;
-}
 
-/* Lpve Story */
-.love-story{
-    background-color: var(--color-background);
-    text-align: center;
-    padding: 20px 10px;
-    margin: 10px;
-    border-radius: 30px;
-    font-size: 15px;
-}
-.love-story p{
-    line-height: 40px;
-    font-size: 20px;
-    color: var(--color-text);
-}
-.love-story h2{
-    font-weight: 700;
-    font-size: 35px;
-    color: var(--color-primary);
-}
-.love-story h3{
-    font-size: 25px;
-    color: var(--color-secondary);
-}
-
-/* Galery */
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1000px;
-    margin:0 auto;
-}
-.gallery img{
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 15px;
-}
-.gallery-section{
+/* ==================================================
+   6. OPENING
+================================================== */
+.opening {
     background-color: var(--color-bg);
     text-align: center;
-    padding:80px 20px;
+    padding: clamp(64px, 10vw, 120px) 20px;
 }
-.gallery-section h2{
+.opening h1 {
+    font-size: clamp(40px, 8vw, 72px);
+    line-height: 1.1;
     color: var(--color-heading);
-    margin-bottom: 40px;
-    font-size: 36px;
 }
-.photo-big{
-    grid-column: span 2;
-    grid-row: span 2;
+.opening p {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
 }
-/* untuk tab */
-@media(max-width: 768px){
-    .gallery{
+
+
+/* ==================================================
+   7. HERO
+================================================== */
+.hero {
+    background-color: var(--color-surface);
+    text-align: center;
+    padding: var(--space-xl) 20px;
+    margin: 10px;
+    border-radius: var(--radius-lg);
+}
+.hero h2 {
+    font-size: clamp(28px, 5vw, 40px);
+    color: var(--color-primary);
+}
+.hero p {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+
+/* ==================================================
+   8. COUPLE
+================================================== */
+.couple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    width: min(calc(100% - 32px), 1000px);
+    margin-inline: auto;
+}
+.bride,
+.groom {
+    width: 100%;
+    padding: var(--space-xl) var(--space-sm);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+.bride {
+    background-color: var(--color-bg);
+}
+.groom {
+    background-color: var(--color-surface);
+}
+.bride h2,
+.groom h2 {
+    color: var(--color-heading);
+}
+
+
+/* ==================================================
+   9. EVENT
+================================================== */
+.event {
+    background-color: var(--color-bg);
+    text-align: center;
+    padding: var(--space-lg) 20px;
+    margin: 10px;
+    border-radius: var(--radius-lg);
+}
+
+.event h2 {
+    font-size: clamp(28px, 5vw, 36px);
+    color: var(--color-primary);
+}
+
+.event h3 {
+    font-size: clamp(22px, 4vw, 25px);
+    color: var(--color-text);
+}
+
+.event p {
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   10. LOVE STORY
+================================================== */
+.love-story {
+    background-color: var(--color-surface);
+    text-align: center;
+    padding: var(--space-lg) 20px;
+    margin: 10px;
+    border-radius: var(--radius-lg);
+}
+
+.love-story h2 {
+    font-size: clamp(28px, 5vw, 36px);
+    color: var(--color-primary);
+}
+
+.love-story h3 {
+    font-size: clamp(20px, 4vw, 25px);
+    color: var(--color-primary);
+}
+
+.love-story p {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+/* ==================================================
+   11. GALLERY
+================================================== */
+.gallery-section {
+    background-color: var(--color-bg);
+    text-align: center;
+    padding: var(--space-xl) 0;
+}
+
+.gallery-section h2 {
+    margin-bottom: var(--space-lg);
+    font-size: clamp(28px, 5vw, 36px);
+    color: var(--color-heading);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.photo-big {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+/* ==================================================
+   12. RESPONSIVE
+================================================== */
+/* untuk tablet */
+@media (min-width: 480px) {
+
+    .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
-/* untuk mobile */
-@media(max-width: 480px) {
-    .gallery{
-        grid-template-columns: 1fr;
+
+/* untuk dekstop */
+@media (min-width: 768px) {
+
+    .couple {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
     }
+
+    .bride,
+    .groom {
+        width: 40%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .photo-big {
-        grid-column: span 1;
-        grid-row: span 1;
+        grid-column: span 2;
+        grid-row: span 2;
     }
+
 }
