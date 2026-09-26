@@ -28,16 +28,50 @@
 
 
 /* ==================================================
+   SECTION
+================================================== */
+.hero-section {
+    padding: var(--space-xl) 0;
+}
+
+.couple-section {
+    padding: var(--space-xl) 0;
+}
+
+.event-section {
+    padding: var(--space-xl) 0;
+}
+
+.love-story-section {
+    padding: var(--space-xl) 0;
+}
+
+.gallery-section {
+    padding: var(--space-xl) 0;
+}
+.location-section{
+    padding: var(--space-xl) 0;
+    text-align: center;
+}
+.gift-section{
+    padding: var(--space-xl) 0;
+    text-align: center;
+}
+.rsvp-section{
+    padding: var(--space-xl) 0;
+    text-align: center;
+}
+
+
+/* ==================================================
    2. GLOBAL / RESET
 ================================================== */
 * {
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -105,7 +139,7 @@ p{
 .opening {
     background-color: var(--color-bg);
     text-align: center;
-    padding: clamp(64px, 10vw, 120px) 20px;
+    padding: var(--space-xl) 0;
 }
 .opening h1 {
     font-size: clamp(40px, 8vw, 72px);
@@ -124,7 +158,7 @@ p{
 .hero {
     background-color: var(--color-surface);
     text-align: center;
-    padding: var(--space-xl) 20px;
+    padding: var(--space-xl) 0;
     margin: 10px;
     border-radius: var(--radius-lg);
 }
@@ -142,18 +176,16 @@ p{
 /* ==================================================
    8. COUPLE
 ================================================== */
+/* mobile first */
 .couple {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: var(--space-lg);
-    width: min(calc(100% - 32px), 1000px);
-    margin-inline: auto;
 }
 .bride,
 .groom {
-    width: 100%;
-    padding: var(--space-xl) var(--space-sm);
+    flex: 1;
+    padding: var(--space-xl);
     border-radius: var(--radius-lg);
     text-align: center;
 }
@@ -172,27 +204,17 @@ p{
 /* ==================================================
    9. EVENT
 ================================================== */
-.event {
-    background-color: var(--color-bg);
-    text-align: center;
-    padding: var(--space-lg) 20px;
-    margin: 10px;
+.events {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    
+}
+.event-card{
+    padding: var(--space-lg);
+    background-color: var(--color-surface);
+    gap:var(--space-lg);
     border-radius: var(--radius-lg);
-}
-
-.event h2 {
-    font-size: clamp(28px, 5vw, 36px);
-    color: var(--color-primary);
-}
-
-.event h3 {
-    font-size: clamp(22px, 4vw, 25px);
-    color: var(--color-text);
-}
-
-.event p {
-    color: var(--color-text);
-    line-height: 1.6;
 }
 
 
@@ -202,7 +224,7 @@ p{
 .love-story {
     background-color: var(--color-surface);
     text-align: center;
-    padding: var(--space-lg) 20px;
+    padding: var(--space-lg) 0;
     margin: 10px;
     border-radius: var(--radius-lg);
 }
@@ -223,34 +245,88 @@ p{
     color: var(--color-text);
 }
 
+
+/* ==================================================
+   LOCATION
+================================================== */
+.location-card{
+    max-width: 600px;
+    margin-inline:auto;
+    padding: var(--space-xl);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+}
+
+
+/* ==================================================
+   RSVP
+================================================== */
+.rsvp-form{
+    width: min(calc(100%-32px),600px);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+.form-grup{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: left;
+}
+.form-grup input:focus,
+.form-grup select:focus {
+    width:100%;
+    padding: 14px 16px;
+    border: 1px solid #d8c7bf;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-family: 16px;
+    font-family: inherit;
+    background-color: var(--color-white);
+}
+
+
+/* ==================================================
+   GIFT
+================================================== */
+.gift-card{
+    max-width: 500px;
+    margin-inline: auto;
+    padding: var(--space-xl);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+}
+.bank-name{
+    font-weight: 700;
+    color:var(--color-heading)
+}
+.account-number{
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.account-name{
+    margin-bottom: var(--space-lg);
+}
+
+
 /* ==================================================
    11. GALLERY
 ================================================== */
-.gallery-section {
-    background-color: var(--color-bg);
-    text-align: center;
-    padding: var(--space-xl) 0;
-}
-
-.gallery-section h2 {
-    margin-bottom: var(--space-lg);
-    font-size: clamp(28px, 5vw, 36px);
-    color: var(--color-heading);
-}
-
 .gallery {
-    display: grid;
+    background-color: var(--color-bg);
+    text-align: center;    display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-sm);
-}
 
+}
 .gallery img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: var(--radius-md);
 }
-
 .photo-big {
     grid-column: span 1;
     grid-row: span 1;
@@ -258,7 +334,7 @@ p{
 
 
 /* ==================================================
-   12. RESPONSIVE
+   RESPONSIVE
 ================================================== */
 /* untuk tablet */
 @media (min-width: 480px) {
@@ -266,6 +342,11 @@ p{
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
+    .photo-big {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
 
 }
 
@@ -292,4 +373,31 @@ p{
         grid-row: span 2;
     }
 
+}
+
+@media (min-width:768px){
+    .events{
+        flex-direction: row;
+    }
+    .event-card{
+        flex:1;
+    }
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+.footer{
+    padding: var(--space-xl) 0;
+    background-color: var(--color-heading);
+    color: var(--color-white);
+    text-align: center;
+}
+.footer p{
+    margin-bottom: var(--space-sm);
+}
+.footer-credit{
+    opacity: 0.8;
+    font-family: 14px;
 }
